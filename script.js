@@ -26,7 +26,25 @@ if (tasks.length === 0) {
   renderContainer = `<p class="text-sm">No Task Available</p>`
   container.innerHTML = renderContainer
 }else if (tasks.length > 0) {
-
+  let allContent = ""; // Accumulate content of all tasks
+  tasks.forEach((items, index) => { // Use forEach for simplicity
+    const {title, description, dueDate} = items;
+    let content = `
+      <div className="py-3 px-4 flex items-center border-b-gray-100 font-light" key={index}>
+        <div className="task w-full">
+          <div className="task-header flex items-center">
+            <h1 className="mr-auto font-medium">${title}</h1>
+            <p className="text-xs font-medium">${dueDate}</p>
+          </div>
+          <div className="details mt-1 flex items-center">
+            <p className="mr-auto text-sm">${description}</p>
+          </div>
+        </div>
+      </div>
+      `;
+    allContent += content; // Append content of each task
+  });
+  container.innerHTML = allContent; // Set container content once
 }
 
 const clearForm = () => {
@@ -36,7 +54,7 @@ const clearForm = () => {
 
   clearValue.value = ''
   clearTitle.value = ''
-  clearDesc = ''
+  clearDesc.value = ''
 }
 
 const submitForm = () => {

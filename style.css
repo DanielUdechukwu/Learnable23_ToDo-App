@@ -3,3 +3,7 @@
 * {
   font-family: 'Poppins';
 }
+
+nav {
+  background-image: linear-gradient(to right, #dddddd, #d2d2de, #c5c7e0, #b6bde2, #a4b3e4, #99b1e7, #8bafea, #7baeed, #72b3f0, #69b7f3, #5fbcf5, #54c0f7);
+}

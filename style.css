@@ -2,6 +2,8 @@
 
 * {
   font-family: 'Poppins';
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 nav {
